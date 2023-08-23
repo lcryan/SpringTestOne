@@ -4,9 +4,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MyController {
-    @PostMapping("/name")
-    public String postName(@RequestBody String name) {
-        return "Hello! My name is u" + name;
+    @PostMapping("/person")
+    public String postName(@RequestBody Person person) {
+        System.out.println(person);
+        return "Hello! My name is " + person.getFirstName() + " " + person.getLastName();
     }
 
     @PostMapping("/number")
